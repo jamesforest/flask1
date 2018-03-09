@@ -1,0 +1,49 @@
+{% extends 'homepage.html' %}
+
+
+{% block content %}
+
+
+
+
+<div class="form-group text-info">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul >
+    {% for message in messages %}
+      <li class="text-dark">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+</div>
+
+
+
+
+<div class='contain text-success'></div>
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th class='text-success'>name</th>
+    <th class='text-success'>password</th>
+ 
+  </tr>
+</thead>
+
+<tbody>
+
+{% for i in results %}
+<tr>
+   <td class='text-success'>{{i[0]}}</TD>
+   <td class='text-success'>{{i[1]}}</TD>
+
+</tr>
+{% endfor %}
+</tbody>
+
+</table>
+</div>
+
+
+{% endblock %}
